@@ -1,8 +1,16 @@
 module.exports = {
-  purge: [],
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#FFFF00",
+      },
+      backgroundImage: theme => ({
+        'hero': "url('/src/img/h1_hero1.png')",
+
+      })
+    },
   },
   variants: {
     extend: {},
