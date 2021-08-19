@@ -5,9 +5,11 @@ module.exports = {
     extend: {
       colors: {
         primary: "#FFFF00",
+        black: '#0b0c10'
       },
       backgroundImage: theme => ({
         'hero': "url('/src/img/h1_hero1.png')",
+        'banner': "url('/src/img/banner.png')"
 
       })
     },
@@ -15,5 +17,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }
