@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState} from 'react';
 import { useForm } from "react-hook-form";
+import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
@@ -10,6 +11,8 @@ const AddService = () => {
 
     const [imageURL, setImageURL] = useState(null)
     const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const history = useHistory()
     
     const handleImageUpload = (e) => {
         console.log(e.target.files[0])
@@ -50,6 +53,10 @@ const AddService = () => {
             showConfirmButton: false
         })
 
+        setTimeout(() => {
+            history.push('/admin/order')
+        }, 2000);
+
     };
 
     return (
@@ -60,18 +67,18 @@ const AddService = () => {
             <div class="pt-6">
                 <form onSubmit={handleSubmit(onSubmit)}>
                 {/* register your input into the hook by invoking the "register" function */}
-                <input type="text" name="name" {...register("name", { required: true })} placeholder="Enter Service Name" class="mb-3 rounded"/>
+                <input type="text" name="name" {...register("name")} placeholder="Enter Service Name" class="mb-3 rounded" required/>
                 {errors.name && <span>This field is required</span>}
 
                 <br/>
                 {/* register your input into the hook by invoking the "register" function */}
-                <input type="number" name="price" {...register("price", { required: true })} placeholder="Enter Price" class="mb-3 rounded"/>
+                <input type="number" name="price" {...register("price")} placeholder="Enter Price" class="mb-3 rounded" required/>
                 {errors.price && <span>This field is required</span>}
 
                 <br/>
                 
                 {/* include validation with required or other standard HTML validation rules */}
-                <textarea type="text" name="details" {...register("details", { required: true })} placeholder="Write Service Details" class="mb-3 rounded"/>
+                <textarea type="text" name="details" {...register("details")} placeholder="Write Service Details" class="mb-3 rounded" required/>
                 {/* errors will return when field validation fails  */}
                 {errors.details && <span>This field is required</span>}
 

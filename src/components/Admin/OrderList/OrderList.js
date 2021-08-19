@@ -23,6 +23,7 @@ const OrderList = () => {
                             
                             <th class="table-s">Service</th>
                             <th class="table-s">Price</th>
+                            <th class="table-s">Customer Name</th>
                             <th class="table-s">Customer Email</th>
                         </tr>
                     </thead>
@@ -34,7 +35,8 @@ const OrderList = () => {
                                     
                                     <td class="table-s">{order.name}</td>
                                     <td class="table-s"> ${order.price}</td>
-                                    <td class="table-s">{order.name}</td>
+                                    <td class="table-s">{order.CustomerName}</td>
+                                    <td class="table-s">{order.CustomerEmail}</td>
                                 </tr>
                             ))
                         }
