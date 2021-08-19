@@ -12,8 +12,8 @@ import OrderList from './OrderList/OrderList';
 
 const Admin = () => {
     return (
-        <div class="min-h-screen w-full">
-            <div class="bg-black w-full py-11"></div>
+        <div class="min-h-screen w-full bg-purple-300 ">
+            
             <div class="flex">
                 <Router>
                     <div class="w-52 min-h-screen bg-banner bg-center bg-cover bg-repeat-x text-white pt-12">
@@ -42,7 +42,7 @@ const Admin = () => {
                         </ul>
                     </div>
                     
-                    <div class="p-8">
+                    <div class="p-8 ">
                         <Switch>
                             <Route path="/admin/order">
                                 <Order/>

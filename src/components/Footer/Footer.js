@@ -3,15 +3,15 @@ import logoW from '../../img/am (1).png'
 
 const Footer = () => {
     return (
-        <div class="bg-black text-gray-200 text-center pt-12 pb-6 flex flex-col justify-center items-center">
+        <div class="bg-gray-800 text-gray-200 text-center pt-12 pb-6 flex flex-col justify-center items-center relative">
             <img src={logoW} alt="" class="w-32"/>
             <nav>
-                <ul class="flex justify-center pt-10 pb-7 text-primary">
-                    <li class="mx-4 cursor-pointer hover:text-white">Home</li>
-                    <li class="mx-4 cursor-pointer hover:text-white">About</li>
-                    <li class="mx-4 cursor-pointer hover:text-white">Service</li>
-                    <li class="mx-4 cursor-pointer hover:text-white">Blog</li>
-                    <li class="mx-4 cursor-pointer hover:text-white">Contact</li>
+                <ul class="flex justify-center pt-10 pb-7 text-gray-300">
+                    <li class="mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</li>
+                    <li class="mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</li>
+                    <li class="mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Service</li>
+                    <li class="mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</li>
+                    <li class="mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</li>
                 </ul>
             </nav>
             <div class="social">
@@ -22,6 +22,11 @@ const Footer = () => {
 
             <div className="footer-bottom pt-12 text-gray-400">
                 <p class="font-normal text-xs">Copyright ©2021 All rights reserved. Made with <i class="fas fa-heart text-primary"></i> by <span class="text-primary">Mostafa</span></p>
+            </div>
+            <div>
+                <a href="#nav"  class="absolute bottom-12 right-8 bg-gray-900 shadow-md py-3 px-4 rounded-sm  animate-bounce">
+                    <i class="fas fa-level-up-alt text-primary"></i>
+                </a>
             </div>
         </div>
     );

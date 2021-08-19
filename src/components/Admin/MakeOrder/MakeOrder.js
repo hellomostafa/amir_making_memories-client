@@ -70,7 +70,7 @@ const MakeOrder = () => {
 
     return (
         <div>
-             <div class="bg-black w-full py-11"></div>
+             
              <div class="container mx-auto pt-5 pb-10 min-h-screen relative">
 
                  <h2 class="text-center">Place order</h2>
@@ -79,13 +79,13 @@ const MakeOrder = () => {
                     <div class="w-full md:w-2/4 pl-4 pb-5">
                         <h4 class="text-2xl pb-4">Shipping Information</h4>
                         <form action="" method="post" onSubmit={handleSubmit(onSubmit)}>
-                            <input type="text" name="name" placeholder="Name" class="mb-2 " {...register("name")}  required/>
-                            <br/>
-                            <input type="number" name="phone" placeholder="Phone" class="mb-2" {...register("phone")}  required/>
-                            <br/>
-                            <input type="text" name="email" placeholder="Email" class="mb-2" {...register("email")}  />
-                            <br/>
-                            <textarea name="address" id="" cols="21" rows="3" placeholder="Address" {...register("address")}  required></textarea>
+                            <input type="text" name="name" placeholder="Name" class="mb-2 form-control" {...register("name")}  required/>
+                            
+                            <input type="number" name="phone" placeholder="Phone" class="mb-2 form-control" {...register("phone")}  required/>
+                            
+                            <input type="text" name="email" placeholder="Email" class="mb-2 form-control" {...register("email")}  />
+                            
+                            <textarea name="address" id="" cols="21" rows="3" class="form-control" placeholder="Address" {...register("address")}  required></textarea>
                             <br/>
                             <button type="submit" class="btn-black absolute xs:bottom-8 md:bottom-50 left-4">Order Now</button>
                         </form>

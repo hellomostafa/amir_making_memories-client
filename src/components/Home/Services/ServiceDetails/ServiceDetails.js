@@ -20,10 +20,10 @@ const ServiceDetails = () => {
 
     return (
         <div>
-            <div class="bg-black w-full py-11"></div>
+            
             <div class="container mx-auto py-10">
                 <h2>Service Details</h2>
-                <div class="flex flex-col sm:flex-row items-center py-4 border-b-2">
+                <div class="flex flex-col sm:flex-row items-center pb-10 pt-5 border-b-2">
                     <img src={serviceDetailsById.img} alt="" class=""/>
                     <div class="pl-4">
                         <h4 class="text-2xl pb-3">{serviceDetailsById.name}</h4>

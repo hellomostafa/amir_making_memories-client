@@ -60,37 +60,33 @@ const AddService = () => {
     };
 
     return (
-        <div>
+        <div class="bg-white rounded-2xl shadow-xl z-20 pt-8 pb-12 px-12">
             <div>
                 <h2>Add New Service</h2>
             </div>
-            <div class="pt-6">
+            <div class="pt-6 ">
                 <form onSubmit={handleSubmit(onSubmit)}>
                 {/* register your input into the hook by invoking the "register" function */}
-                <input type="text" name="name" {...register("name")} placeholder="Enter Service Name" class="mb-3 rounded" required/>
+                <input type="text" name="name" {...register("name")} placeholder="Enter Service Name" class="mb-3 form-control" required/>
                 {errors.name && <span>This field is required</span>}
 
-                <br/>
                 {/* register your input into the hook by invoking the "register" function */}
-                <input type="number" name="price" {...register("price")} placeholder="Enter Price" class="mb-3 rounded" required/>
+                <input type="number" name="price" {...register("price")} placeholder="Enter Price" class="mb-3 form-control" required/>
                 {errors.price && <span>This field is required</span>}
 
-                <br/>
                 
                 {/* include validation with required or other standard HTML validation rules */}
-                <textarea type="text" name="details" {...register("details")} placeholder="Write Service Details" class="mb-3 rounded" required/>
+                <textarea type="text" name="details" {...register("details")} placeholder="Write Service Details" class="mb-3 form-control" required/>
                 {/* errors will return when field validation fails  */}
                 {errors.details && <span>This field is required</span>}
 
-                <br/>
 
                 <label htmlFor="file" class="pb-1">Add Your Service Photo</label>
                 <br/>
-                <input type="file" name="photo" onChange={handleImageUpload} required  class="mb-3 rounded"/>
+                <input type="file" name="photo" onChange={handleImageUpload} required  class="mb-3 rounded form-control"/>
                 {/* errors will return when field validation fails  */}
                 {errors.photo && <span>This field is required</span>}
 
-                <br/>
                 
                 <input type="submit" class="btn-black cursor-pointer"/>
                 </form>

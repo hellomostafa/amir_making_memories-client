@@ -10,12 +10,15 @@ import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import ServiceDetails from "./components/Home/Services/ServiceDetails/ServiceDetails";
 import Nav from './components/Nav/Nav';
-import Login from "./components/Pages/Login/Login";
+import { AuthProvider } from "./components/Pages/Sign/Auth/useAuth";
+import Login from "./components/Pages/Sign/Login";
+import SignUp from "./components/Pages/Sign/SignUp";
+
 
 
 function App() {
   return (
-    <div>
+    <AuthProvider>
     <Router>
       <Nav/>
       <Switch>
@@ -32,6 +35,9 @@ function App() {
         <Route path="/login">
           <Login/>
         </Route>
+        <Route path="/signup">
+          <SignUp/>
+        </Route>
         <Route path="/makeOrder/:id">
           <MakeOrder/>
         </Route>
@@ -43,7 +49,7 @@ function App() {
       <Footer/>
     </Router>
     
-    </div>
+    </AuthProvider>
   );
 }
 

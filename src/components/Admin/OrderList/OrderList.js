@@ -14,7 +14,7 @@ const OrderList = () => {
     }, [])
 
     return (
-        <div>
+        <div class="bg-white rounded-2xl shadow-xl z-20 pt-8 pb-12 px-12">
             <h2>Order List</h2>
             <div class="pt-5">
                 <table class="table-auto border-collapse border border-black">

@@ -9,7 +9,7 @@ const ManageService = () => {
         .then(data => setManageServices(data))
     }, [])
     return (
-        <div>
+        <div class="bg-white rounded-2xl shadow-xl z-20 pt-8 pb-12 px-12">
             <h2>Manage Services</h2>
             <div class="pt-5">
                 <table class="table-auto border-collapse">
