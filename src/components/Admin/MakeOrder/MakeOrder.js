@@ -3,16 +3,23 @@ import { useHistory, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { useForm } from "react-hook-form";
+import { useAuth } from '../../Pages/Sign/Auth/useAuth';
 
 const MySwal = withReactContent(Swal)
 
 const MakeOrder = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
+    // auth
+    const {currentUser} = useAuth()
+
+    
+
     const {id} = useParams()
 
     const [serviceById, setServiceById] = useState([])
-    const [order, setOrder] = useState([])
+    const [orders, setOrders] = useState([])
+    
 
     const history = useHistory()
 
@@ -25,7 +32,7 @@ const MakeOrder = () => {
         .then(res => res.json())
         .then(data => {
             setServiceById(data)
-            setOrder(data)
+            setOrders(data)
         })
 
     }, [id])
@@ -34,15 +41,27 @@ const MakeOrder = () => {
     // Placing Order
     const onSubmit = data => {
 
-        const formData =  {
-            CustomerName: data.name,
+        const shippingData =  {
+            shipToName: data.name,
             phone: data.phone,
-            CustomerEmail: data.email,
+            shipToEmail: data.email,
             address: data.address
         }
         //console.log(formData)
 
-        const newOrder = {...order, ...formData}
+        const loggedInUser = {
+            customerEmail: currentUser.email
+        }
+
+        const date = new Date();
+        const orderDate = {
+            year: date.getFullYear(),
+            month: date.getMonth(),
+            day: date.getDate()
+        }
+        // const orderDate = [ date.getMonth(), date.getDate(), date.getFullYear()];
+
+        const newOrder = {...orders, ...shippingData, ...loggedInUser, ...orderDate}
         //console.log(newOrder)
         fetch('http://localhost:4040/addOrder', {
         method: 'POST',
@@ -53,12 +72,12 @@ const MakeOrder = () => {
             position: 'center',
             icon: 'success',
             title: 'Order Placed!',
-            // timer: '2500',
+             timer: '2000',
             showConfirmButton: false
         })
 
         setTimeout(() => {
-            history.push('/')
+            history.push('/admin/order')
         }, 3000);
         
         
@@ -87,7 +106,7 @@ const MakeOrder = () => {
                             
                             <textarea name="address" id="" cols="21" rows="3" class="form-control" placeholder="Address" {...register("address")}  required></textarea>
                             <br/>
-                            <button type="submit" class="btn-black absolute xs:bottom-8 md:bottom-50 left-4">Order Now</button>
+                            <button type="submit" class="btn-gray absolute xs:bottom-8 md:bottom-50 left-4">Order Now</button>
                         </form>
                     </div>
 
@@ -97,7 +116,7 @@ const MakeOrder = () => {
                         <div class="pl-4">
                             <h4 class="text-2xl pb-3">{serviceById.name}</h4>
                             <p>{serviceById.details}</p>
-                            <p class="font-bold py-3">Price: ${serviceById.price}</p>
+                            <p class="font-bold text-2xl py-3">Price: ${serviceById.price}</p>
                             
                         </div>
                     

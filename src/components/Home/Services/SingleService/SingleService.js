@@ -17,7 +17,7 @@ const SingleService = ({service}) => {
                     
 
                     <Link to={`/makeOrder/${service._id}`}>
-                        <button class="btn-black">Buy Now</button>
+                        <button class="btn-gray">Buy Now</button>
                     </Link>
                     
                 </div>

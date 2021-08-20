@@ -88,7 +88,7 @@ const AddService = () => {
                 {errors.photo && <span>This field is required</span>}
 
                 
-                <input type="submit" class="btn-black cursor-pointer"/>
+                <input type="submit" class="btn-gray cursor-pointer"/>
                 </form>
             </div>
         </div>

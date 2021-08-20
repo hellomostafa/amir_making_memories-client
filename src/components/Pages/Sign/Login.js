@@ -1,8 +1,15 @@
 import React, {useRef, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from './Auth/useAuth';
+import { useHistory, useLocation } from 'react-router-dom';
+
 
 const Login = () => {
+     let history = useHistory()
+    let location = useLocation();
+
+    let { from } = location.state || { from: { pathname: "/" } };
+    
     const emailRef = useRef()
     const passwordRef = useRef()
 
@@ -20,6 +27,7 @@ const Login = () => {
             setError('')
             setLoading(true)
           await login(emailRef.current.value, passwordRef.current.value)
+          history.replace(from)
         } catch {
             setError('Failed to Sign In')
             

@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../img/am (1).png'
 import { Transition } from "@headlessui/react";
+import { useAuth } from '../Pages/Sign/Auth/useAuth';
 
 const Nav = () => {
 
     const [isOpen, setIsOpen] = useState(false)
+    const {currentUser} = useAuth()
 
 
 
@@ -53,9 +55,20 @@ const Nav = () => {
                                 Blogs
                             </a>
 
-                            <Link to="/login" className="text-gray-300 bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                            {
+                                currentUser ? 
+                                
+                                <Link to="/admin/order">
+                                    <img title="Profile" class="w-6 " src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.cb8046c163f77190406dfbf4dec89848.svg" alt="" />
+                                </Link>
+
+                                :
+                                <Link to="/login" className="text-gray-300 bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                                 Login
-                            </Link>
+                                </Link>
+                            }
+
+                            
 
 
                             </div>
@@ -140,7 +153,7 @@ const Nav = () => {
                             Services
                             </a>
 
-                            <Link to="/admin/oder" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                            <Link to="/admin/order" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                                 Admin
                             </Link>
 
@@ -151,9 +164,20 @@ const Nav = () => {
                             Blogs
                             </a>
 
-                            <Link to="login" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                            {
+                                currentUser ? 
+                                
+                                <Link to="/admin/order">
+                                    <img title="Profile" class="border-2 border-yellow-400 rounded-md p-2 w-12 m-4" src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.cb8046c163f77190406dfbf4dec89848.svg" alt="" />
+                                </Link>
+
+                                :
+                                <Link to="login" className="ml-4 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                                 Login
-                            </Link>
+                                </Link>
+                            }
+
+                            
 
                         </div>
                         </div>

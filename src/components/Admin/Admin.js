@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import AddAdmin from './AddAdmin/AddAdmin';
 import AddService from './AddService/AddService';
 import ManageService from './ManageService/ManageService';
 import Order from './Order/Order';
@@ -39,6 +40,11 @@ const Admin = () => {
                                     Manage Services
                                 </li>
                             </Link>
+                            <Link to="/admin/addAdmin">
+                                <li class="p-4 hover:text-primary hover:bg-black pl-8 cursor-pointer">
+                                    Add Admin
+                                </li>
+                            </Link>
                         </ul>
                     </div>
                     
@@ -55,6 +61,9 @@ const Admin = () => {
                             </Route>
                             <Route path="/admin/manageServices">
                                 <ManageService/>
+                            </Route>
+                            <Route path="/admin/addAdmin">
+                                <AddAdmin/>
                             </Route>
                         </Switch>
                     </div>

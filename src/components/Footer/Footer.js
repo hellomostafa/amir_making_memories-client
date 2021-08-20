@@ -20,8 +20,9 @@ const Footer = () => {
                 <i class="fab fa-instagram mx-2 rounded-full border py-2 px-2 bg-transparent hover:bg-primary hover:text-black transition ease-in-out duration-700 cursor-pointer"></i>
             </div>
 
-            <div className="footer-bottom pt-12 text-gray-400">
-                <p class="font-normal text-xs">Copyright ©2021 All rights reserved. Made with <i class="fas fa-heart text-primary"></i> by <span class="text-primary">Mostafa</span></p>
+            <div className="footer-bottom pt-12 text-gray-400 md:flex">
+                <p class="font-normal text-xs">Copyright © {(new Date().getFullYear())} All rights reserved. </p>
+                <p class="text-xs">Made with <i class="fas fa-heart text-primary"></i> by <a href="//mostafamahmud.netlify.app" target="_blank" rel="noreferrer" class="text-primary">Mostafa</a></p>
             </div>
             <div>
                 <a href="#nav"  class="absolute bottom-12 right-8 bg-gray-900 shadow-md py-3 px-4 rounded-sm  animate-bounce">

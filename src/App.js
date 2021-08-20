@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import ServiceDetails from "./components/Home/Services/ServiceDetails/ServiceDetails";
 import Nav from './components/Nav/Nav';
+import PrivateRoute from "./components/Pages/PrivateRoute/PrivateRoute";
 import { AuthProvider } from "./components/Pages/Sign/Auth/useAuth";
 import Login from "./components/Pages/Sign/Login";
 import SignUp from "./components/Pages/Sign/SignUp";
@@ -29,18 +30,18 @@ function App() {
         <Route  path="/home">
           <Home/>
         </Route>
-        <Route path="/admin/order">
+        <PrivateRoute path="/admin/order">
           <Admin/>
-        </Route>
+        </PrivateRoute>
         <Route path="/login">
           <Login/>
         </Route>
         <Route path="/signup">
           <SignUp/>
         </Route>
-        <Route path="/makeOrder/:id">
+        <PrivateRoute path="/makeOrder/:id">
           <MakeOrder/>
-        </Route>
+        </PrivateRoute>
         <Route path="/serviceDetails/:id">
           <ServiceDetails/>
         </Route>
