@@ -13,7 +13,7 @@ const Order = () => {
     console.log(currentUser)
 
     useEffect(() => {
-        fetch('http://localhost:4040/orderViaEmail?customerEmail='+currentUser.email, {
+        fetch('https://secret-reef-05048.herokuapp.com/orderViaEmail?email='+currentUser.email, {
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
         })
@@ -21,7 +21,10 @@ const Order = () => {
         .then(data => setOrderViaEmail(data))
     }, [currentUser.email])
 
-    console.log(orderViaEmail)
+    //console.log(orderViaEmail)
+
+
+
     async function handleLogout(){
         setError('')
 
@@ -56,12 +59,12 @@ const Order = () => {
                             <div class="m-4 w-42 rounded-xl shadow-xl">
                                 
                                 <div class="flex flex-col md:flex-row xs:pb-5">
-                                    <img class="rounded-t-xl md:rounded-l-xl h-32"  src={order.img} alt="" />
+                                    <img class="rounded-t-xl md:rounded-l-xl h-32"  src={order.product.img} alt="" />
                                     <div class="px-4 w-42">
                                         <p class="pt-3 pb-2 text-sm text-black font-semibold">Order Date: {order.day}-{order.month}-{order.year}</p>
-                                        <h6>{order.name}</h6>
+                                        <h6>{order.product.name}</h6>
                                         <div class="py-3 flex flex-col md:flex-row items-center md:justify-between">
-                                            <p class="text-black font-semibold pb-3">${order.price}</p>
+                                            <p class="text-black font-semibold pb-3">${order.product.price}</p>
                                             <button class="btn-status py-1 w-24">Pending...</button>
                                         </div>
                                     </div>

@@ -40,22 +40,29 @@ const AddService = () => {
         }
         //console.log(formData)
        
-        fetch('http://localhost:4040/addService', {
+        fetch('https://secret-reef-05048.herokuapp.com/addService', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(formData)
         })
-        MySwal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Service Added',
-            timer: '2500',
-            showConfirmButton: false
-        })
+        .then(result => {
+            if(result){
+                MySwal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Service Added',
+                timer: '2500',
+                showConfirmButton: false
+                })
 
-        setTimeout(() => {
-            history.push('/admin/order')
-        }, 2000);
+                setTimeout(() => {
+                    history.push('/admin/manageServices')
+                }, 2000);
+            }else {
+                alert('Something wrong, Contact to the Developer!')
+            }
+        })
+        
 
     };
 

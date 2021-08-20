@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const SingleService = ({service}) => {
     return (
-        <div class="w-80 m-5">
-            <img src={service.img} alt="" />
-            <div class="py-4">
+        <div class="w-80 m-5 shadow-2xl">
+            <img class="rounded-t-lg" src={service.img} alt="" />
+            <div class="pt-4 px-4 pb-7 rounded-xl">
                 <h3 class="text-3xl">{service.name}</h3>
                 <p class="py-3">{service.details}</p>
                 <p class="font-bold pb-4 ">Price: ${service.price}</p>

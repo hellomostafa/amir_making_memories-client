@@ -2,6 +2,10 @@ import React, {useRef, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from './Auth/useAuth';
 import { useHistory, useLocation } from 'react-router-dom';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 
 const Login = () => {
@@ -27,6 +31,14 @@ const Login = () => {
             setError('')
             setLoading(true)
           await login(emailRef.current.value, passwordRef.current.value)
+          MySwal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'SuccessFully Logged in',
+            timer: '3000',
+            showConfirmButton: false
+            })
+
           history.replace(from)
         } catch {
             setError('Failed to Sign In')
@@ -47,8 +59,8 @@ const Login = () => {
             {error && <p class="text-red-500 pb-2">{error}</p>}
             <form onSubmit={handleSubmit}>
                 <div class="space-y-4">
-                <input type="email" placeholder="Email " class="form-control" ref={emailRef} required/>
-                <input type="password" placeholder="Password" class="form-control" ref={passwordRef} required/>
+                <input type="email" placeholder="Email " class="form-control" ref={emailRef} value="test@test.com" required/>
+                <input type="password" placeholder="Password" class="form-control" ref={passwordRef} value="#2021dev" required/>
                 
                 </div>
                 <div class="text-center mt-6">

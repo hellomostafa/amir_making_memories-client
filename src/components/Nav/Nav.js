@@ -35,9 +35,9 @@ const Nav = () => {
                                 Home
                             </Link>
 
-                            <Link to="" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                            <a href="#about" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                                 About
-                            </Link>
+                            </a>
 
 
                             

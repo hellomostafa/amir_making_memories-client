@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useState} from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
@@ -21,22 +20,30 @@ const AddAdmin = () => {
         }
         console.log(formData)
        
-        fetch('http://localhost:4040/addAdmin', {
+        fetch('https://secret-reef-05048.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(formData)
         })
-        // MySwal.fire({
-        //     position: 'center',
-        //     icon: 'success',
-        //     title: 'Admin Added',
-        //     timer: '2500',
-        //     showConfirmButton: false
-        // })
+        .then(result=> {
+            if(result){
+                MySwal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Admin Added',
+                timer: '2500',
+                showConfirmButton: false
+                })
 
-        // setTimeout(() => {
-        //     history.push('/admin/order')
-        // }, 2000);
+                setTimeout(() => {
+                    history.push('/admin/order')
+                }, 2000);
+            }
+            else{
+                alert('Something Wrong!')
+            }
+        })
+        
 
     };
 

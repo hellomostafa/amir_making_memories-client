@@ -25,7 +25,7 @@ const MakeOrder = () => {
 
     useEffect(() => {
         //console.log(id, 'inside effect')
-        fetch(`http://localhost:4040/makeOrder/${id}`, {
+        fetch(`https://secret-reef-05048.herokuapp.com/services/${id}`, {
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
         })
@@ -45,7 +45,8 @@ const MakeOrder = () => {
             shipToName: data.name,
             phone: data.phone,
             shipToEmail: data.email,
-            address: data.address
+            address: data.address,
+            product: orders
         }
         //console.log(formData)
 
@@ -61,24 +62,40 @@ const MakeOrder = () => {
         }
         // const orderDate = [ date.getMonth(), date.getDate(), date.getFullYear()];
 
-        const newOrder = {...orders, ...shippingData, ...loggedInUser, ...orderDate}
-        //console.log(newOrder)
-        fetch('http://localhost:4040/addOrder', {
+        const newOrder = { ...shippingData, ...loggedInUser, ...orderDate}
+        console.log(newOrder)
+
+        fetch('https://secret-reef-05048.herokuapp.com/addOrder', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(newOrder)
-        })
-        MySwal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Order Placed!',
-             timer: '2000',
-            showConfirmButton: false
-        })
 
-        setTimeout(() => {
-            history.push('/admin/order')
-        }, 3000);
+        })
+        .then(result =>{
+            if(result){
+                MySwal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Order Placed!',
+                timer: '2000',
+                showConfirmButton: false
+                })
+
+                setTimeout(() => {
+                    history.push('/admin/order')
+                }, 3000);
+            }else {
+                MySwal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Ooops',
+                text: 'Something went wrong!',
+                timer: '2000',
+                showConfirmButton: false
+                })
+            }
+        })
+        
         
         
         

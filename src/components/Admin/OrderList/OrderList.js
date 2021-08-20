@@ -5,7 +5,7 @@ const OrderList = () => {
     const [orderList, setOrderList] = useState([])
     
     useEffect(() => {
-        fetch('http://localhost:4040/orderList', {
+        fetch('https://secret-reef-05048.herokuapp.com/orderList', {
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
         })
@@ -34,8 +34,8 @@ const OrderList = () => {
                                 <tr>
                                     
                                     <td class="table-s">{order.customerEmail}</td>
-                                    <td class="table-s">{order.name}</td>
-                                    <td class="table-s"> ${order.price}</td>
+                                    <td class="table-s">{order.product.name}</td>
+                                    <td class="table-s"> ${order.product.price}</td>
                                     <td class="table-s">
                                         <select class="btn-status w-36 py-2 text-white">
                                             <option>Pending</option>
