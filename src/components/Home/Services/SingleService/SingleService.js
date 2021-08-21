@@ -12,7 +12,7 @@ const SingleService = ({service}) => {
                 <div class="flex justify-between">
 
                     <Link to={`/serviceDetails/${service._id}`}>
-                        <button class="btn-white">Read more</button>
+                        <button class="btn-white">View more</button>
                     </Link>
                     
 

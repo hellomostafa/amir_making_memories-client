@@ -39,6 +39,7 @@ const OrderList = () => {
                                     <td class="table-s">
                                         <select class="btn-status w-36 py-2 text-white">
                                             <option>Pending</option>
+                                            <option>Progress</option>
                                             <option>Shipped</option>
                                             <option>Completed</option>
                                         </select>

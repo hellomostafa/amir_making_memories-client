@@ -105,41 +105,41 @@ const MakeOrder = () => {
     //console.log(serviceById)
 
     return (
-        <div>
+        <div class="bg-purple-300">
              
              <div class="container mx-auto pt-5 pb-10 min-h-screen relative">
+                <div class="bg-white py-16 px-10 rounded-2xl shadow-2xl">
+                    <h2 class="text-center">Place order</h2>
 
-                 <h2 class="text-center">Place order</h2>
-
-                <div class="flex flex-col-reverse md:flex-row justify-center items-center pt-6  pb-5">
-                    <div class="w-full md:w-2/4 pl-4 pb-5">
-                        <h4 class="text-2xl pb-4">Shipping Information</h4>
-                        <form action="" method="post" onSubmit={handleSubmit(onSubmit)}>
-                            <input type="text" name="name" placeholder="Name" class="mb-2 form-control" {...register("name")}  required/>
-                            
-                            <input type="number" name="phone" placeholder="Phone" class="mb-2 form-control" {...register("phone")}  required/>
-                            
-                            <input type="text" name="email" placeholder="Email" class="mb-2 form-control" {...register("email")}  />
-                            
-                            <textarea name="address" id="" cols="21" rows="3" class="form-control" placeholder="Address" {...register("address")}  required></textarea>
-                            <br/>
-                            <button type="submit" class="btn-gray absolute xs:bottom-8 md:bottom-50 left-4">Order Now</button>
-                        </form>
-                    </div>
-
-                
-                    <div class="flex flex-row-reverse items-center pt-4">
-                        <img src={serviceById.img} alt="" class="hidden sm:block h-60"/>
-                        <div class="pl-4">
-                            <h4 class="text-2xl pb-3">{serviceById.name}</h4>
-                            <p>{serviceById.details}</p>
-                            <p class="font-bold text-2xl py-3">Price: ${serviceById.price}</p>
-                            
+                    <div class="flex flex-col-reverse md:flex-row justify-center items-center pt-6  pb-5">
+                        <div class="w-full md:w-2/4 pl-4 pb-5">
+                            <h4 class="text-2xl pb-4">Shipping Information</h4>
+                            <form action="" method="post" onSubmit={handleSubmit(onSubmit)}>
+                                <input type="text" name="name" placeholder="Name" class="mb-2 form-control" {...register("name")}  required/>
+                                
+                                <input type="number" name="phone" placeholder="Phone" class="mb-2 form-control" {...register("phone")}  required/>
+                                
+                                <input type="text" name="email" placeholder="Email" class="mb-2 form-control" {...register("email")}  />
+                                
+                                <textarea name="address" id="" cols="21" rows="3" class="form-control" placeholder="Address" {...register("address")}  required></textarea>
+                                <br/>
+                                <button type="submit" class="btn-gray absolute xs:bottom-8 md:bottom-50 left-14">Order Now</button>
+                            </form>
                         </div>
+
                     
+                        <div class="flex flex-row-reverse items-center pt-4">
+                            <img src={serviceById.img} alt="" class="hidden sm:block h-60 rounded-r-2xl"/>
+                            <div class="p-4">
+                                <h4 class="text-2xl pb-3">{serviceById.name}</h4>
+                                <p>{serviceById.details}</p>
+                                <p class="font-bold text-2xl py-3">Price: ${serviceById.price}</p>
+                                
+                            </div>
+                        
+                        </div>
                     </div>
                  </div>
-                 
              </div>
         </div>
     );
