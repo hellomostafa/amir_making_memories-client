@@ -7,11 +7,11 @@ const Footer = () => {
             <img src={logoW} alt="" class="w-32"/>
             <nav>
                 <ul class="flex justify-center pt-10 pb-7 text-gray-300">
-                    <li class="mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</li>
-                    <li class="mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</li>
-                    <li class="mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Service</li>
-                    <li class="mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</li>
-                    <li class="mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</li>
+                    <li class="mx-0 md:mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</li>
+                    <li class="mx-0 md:mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</li>
+                    <li class="mx-0 md:mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Service</li>
+                    <li class="mx-0 md:mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</li>
+                    <li class="mx-0 md:mx-2 cursor-pointer hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</li>
                 </ul>
             </nav>
             <div class="social">

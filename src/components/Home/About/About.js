@@ -14,7 +14,7 @@ const About = () => {
                     </a>
                 </div>
                 <div>
-                    <img class="h-96 lg:h-auto rounded-xl shadow-2xl" src={aboutImg} alt="" />
+                    <img class="h-96 w-80 md:w-full lg:h-auto rounded-xl shadow-2xl" src={aboutImg} alt="" />
                 </div>
 
             </div>
