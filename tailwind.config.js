@@ -8,8 +8,8 @@ module.exports = {
         black: '#0b0c10'
       },
       backgroundImage: theme => ({
-        'hero': "url('/src/img/h1_hero1.png')",
-        'banner': "url('/src/img/banner.png')"
+        'hero': "url('/src/img/h1_hero1.jpg')",
+        'banner': "url('/src/img/banner.jpg')"
 
       })
     },

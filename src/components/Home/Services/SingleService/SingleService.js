@@ -16,7 +16,7 @@ const SingleService = ({service}) => {
                     </Link>
                     
 
-                    <Link to={`/makeOrder/${service._id}`}>
+                    <Link to={`/makeOrder/${service._id}`} class="hover:shadow-xl">
                         <button class="btn-gray">Buy Now</button>
                     </Link>
                     

@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import ServiceDetails from "./components/Home/Services/ServiceDetails/ServiceDetails";
 import Nav from './components/Nav/Nav';
+import NotFound from "./components/Pages/NotFound/NotFound";
 import PrivateRoute from "./components/Pages/PrivateRoute/PrivateRoute";
 import { AuthProvider } from "./components/Pages/Sign/Auth/useAuth";
 import Login from "./components/Pages/Sign/Login";
@@ -44,6 +45,9 @@ function App() {
         </PrivateRoute>
         <Route path="/serviceDetails/:id">
           <ServiceDetails/>
+        </Route>
+        <Route path="*">
+          <NotFound/>
         </Route>
 
       </Switch>
