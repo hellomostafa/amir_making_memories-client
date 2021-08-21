@@ -1,6 +1,6 @@
 # Amir Making Memories | Photography Service
 
-A Fully Responsive MERN Stack Photography Website/WebApp.
+A Fully Responsive MERN Stack Photography Service Website/WebApp.
 
 ![photography_app](https://i.ibb.co/6XDhQXT/photography.png)
 

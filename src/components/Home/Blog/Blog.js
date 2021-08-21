@@ -55,7 +55,7 @@ const Blog = () => {
                                     <p class="pb-2 text-sm">{blog.description}</p>
                                     <div>
                                         <a href={blog.url} rel="noreferrer " target="_blank">
-                                            <button class="btn-gray">Full Blog</button>
+                                            <button class="btn-gray">Read more</button>
                                         </a>
                                         
                                     </div>
