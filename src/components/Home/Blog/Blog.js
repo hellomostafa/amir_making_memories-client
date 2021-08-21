@@ -37,7 +37,7 @@ const Blog = () => {
         }
     ]
     return (
-        <div class="bg-gray-300">
+        <div class="bg-gray-300" id="blog">
             <div class="container mx-auto py-20">
                 <h2 class="text-center md:text-left">Latest Blogs</h2>
                 <p class="text-center md:text-left">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, omnis.</p>
