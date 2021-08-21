@@ -1,6 +1,6 @@
 # Amir Making Memories | Photography Service
 
-A MERN Stack Photography Website/WebApp.
+A Fully Responsive MERN Stack Photography Website/WebApp.
 
 ![photography_app](https://i.ibb.co/6XDhQXT/photography.png)
 
@@ -28,4 +28,4 @@ A MERN Stack Photography Website/WebApp.
 9. Firebase
 10. Heroku
 
-#[Live](https://amir-mking-memories.web.app/)
+# [Live](https://amir-mking-memories.web.app/)
