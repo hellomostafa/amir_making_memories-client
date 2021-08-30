@@ -59,8 +59,8 @@ const Login = () => {
             {error && <p class="text-red-500 pb-2">{error}</p>}
             <form onSubmit={handleSubmit}>
                 <div class="space-y-4">
-                <input type="email" placeholder="Email " class="form-control" ref={emailRef} value="mos@mos.com" required/>
-                <input type="password" placeholder="Password" class="form-control" ref={passwordRef} value="mos123" required/>
+                <input type="email" contentEditable="true" placeholder="Email " class="form-control" ref={emailRef}  required/>
+                <input type="password" placeholder="Password" class="form-control" ref={passwordRef}  required/>
                 
                 </div>
                 <div class="text-center mt-6">
